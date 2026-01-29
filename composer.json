@@ -1,0 +1,7 @@
+{
+    "name": "everest/contact-form",
+    "description": "EVEREST Elevator Buckets Contact Form with PHPMailer",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}
