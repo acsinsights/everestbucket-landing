@@ -42,14 +42,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';           // Gmail SMTP server
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'kartikpaul366@gmail.com';  // Your Gmail address
-        $mail->Password   = 'kbiuqoziawzdiomf';         // Gmail App Password (NOT your regular password)
+        $mail->Username   = 'everestacs1@gmail.com';    // Your SMTP username
+        $mail->Password   = 'aumyayyazpcbkxro';         // Gmail App Password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
         // Email Recipients
-        $mail->setFrom('kartikpaul366@gmail.com', 'EVEREST Website');
-        $mail->addAddress('kartikpaul366@gmail.com', 'Kartik Paul');
+        $mail->setFrom('everestacs1@gmail.com', 'EVEREST Website');
+        $mail->addAddress('sales@everestelevatorbuckets.co.in', 'EVEREST Sales');
+        $mail->addBCC('leadbackup@bingeatmedia.com');
         $mail->addReplyTo($mail->Username, $name);
 
         // Email Content
@@ -76,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <body>
             <div class='container'>
                 <div class='header'>
-                    <h1 style='margin:0;'>🏭 New Enquiry Received!</h1>
+                    <h1 style='margin:0;'>New Enquiry Received!</h1>
                     <p style='margin:10px 0 0 0; opacity: 0.9;'>EVEREST Elevator Buckets</p>
                 </div>
                 <div class='content'>
