@@ -1,0 +1,270 @@
+/* ========================================
+   EverestBucket - Modern Landing Page Styles
+   ======================================== */
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Text Gradient Effect */
+.text-gradient {
+  background: linear-gradient(135deg, #4e9fec 0%, #f3a712 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Primary Button with Gradient Hover */
+.btn-primary {
+  background: linear-gradient(135deg, #4e9fec 0%, #3b8ad9 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(78, 159, 236, 0.3);
+  z-index: 1;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f3a712 0%, #e09600 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(243, 167, 18, 0.4);
+  color: #1a1f3b;
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+/* Ensure text stays above the gradient overlay */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary svg {
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover svg {
+  stroke: #1a1f3b;
+}
+
+/* Icon Shadow */
+.icon-shadow {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Grid Pattern for Ad Mockups */
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(rgba(26, 31, 59, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 31, 59, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Fade In Up Animation */
+.fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll Fade Animation */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Feature Card Hover Effect */
+.feature-card {
+  position: relative;
+  transform: translateY(0);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Ad Preview Card */
+.ad-preview-card {
+  position: relative;
+  transform: translateY(0);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ad-preview-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Ad Card Animation (Hero Section) */
+.ad-card {
+  animation: float 6s ease-in-out infinite;
+}
+
+.ad-card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.ad-card:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.ad-card:nth-child(3) {
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Counter Animation */
+.counter {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Navbar Blur Effect Enhancement */
+nav {
+  transition: all 0.3s ease;
+}
+
+nav.scrolled {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .text-5xl {
+    font-size: 2.5rem;
+  }
+
+  .text-7xl {
+    font-size: 3rem;
+  }
+
+  .ad-preview-card .absolute.-top-3 {
+    position: static;
+    transform: none;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Smooth Link Transitions */
+a {
+  transition: all 0.3s ease;
+}
+
+/* Focus States for Accessibility */
+a:focus,
+button:focus {
+  outline: 2px solid #4e9fec;
+  outline-offset: 2px;
+}
+
+/* Selection Color */
+::selection {
+  background: #4e9fec;
+  color: white;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7f9fc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4e9fec;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b8ad9;
+}
+
+/* Loading Animation for Page */
+body {
+  opacity: 0;
+  animation: bodyFadeIn 0.5s ease-out 0.1s forwards;
+}
+
+@keyframes bodyFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Pulse Animation for Badge */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Additional hover effects */
+.hover-lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
