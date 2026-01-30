@@ -42,14 +42,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';           // Gmail SMTP server
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'everestacs1@gmail.com';    // Your SMTP username
-        $mail->Password   = 'aumyayyazpcbkxro';         // Gmail App Password
+        $mail->Username   = 'Kartikpaul366@gmail.com';    // Your SMTP username
+        $mail->Password   = 'vgawxjxndkjgamht';         // Gmail App Password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
         // Email Recipients
-        $mail->setFrom('everestacs1@gmail.com', 'EVEREST Website');
-        $mail->addAddress('sales@everestelevatorbuckets.co.in', 'EVEREST Sales');
+        $mail->setFrom('Kartikpau366@gmail.com', 'EVEREST Website');
+        $mail->addAddress('take@acsinsights.com', 'EVEREST Sales');
         $mail->addBCC('leadbackup@bingeatmedia.com');
         $mail->addReplyTo($mail->Username, $name);
 
