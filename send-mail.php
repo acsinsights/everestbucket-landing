@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Email Recipients
         $mail->setFrom('Kartikpau366@gmail.com', 'EVEREST Website');
-        $mail->addAddress('take@acsinsights.com', 'EVEREST Sales');
+        $mail->addAddress('tech@acsinsights.com', 'EVEREST Sales');
         $mail->addBCC('leadbackup@bingeatmedia.com');
         $mail->addReplyTo($mail->Username, $name);
 
